@@ -1,0 +1,39 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes marquee-reverse {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+/* Marquee Container */
+.animate-marquee-wrapper {
+  display: flex;
+  width: max-content;
+  overflow: hidden;
+}
+
+/* Marquee Animation */
+.animate-marquee {
+  display: flex;
+  gap: 1.5rem;
+  animation: marquee 12s linear infinite;
+}
+
+.animate-marquee-reverse {
+  animation: marquee-reverse 12s linear infinite;
+}
+
